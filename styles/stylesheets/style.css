@@ -1,0 +1,53 @@
+/* line 3, ../sass/style.scss */
+body {
+  background-color: #f4f4f4;
+}
+
+/* line 6, ../sass/style.scss */
+.mainArea {
+  margin: 0 auto;
+  width: 1600px;
+}
+/* line 10, ../sass/style.scss */
+.mainArea .sortable {
+  min-height: 800px;
+}
+/* line 14, ../sass/style.scss */
+.mainArea .addBtn {
+  margin-left: 20px;
+}
+/* line 18, ../sass/style.scss */
+.mainArea .sortable {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  border: 1px solid grey;
+  -webkit-box-shadow: 0px 0px 5px #333333;
+  -moz-box-shadow: 0px 0px 5px #333333;
+  box-shadow: 0px 0px 5px #333333;
+}
+/* line 30, ../sass/style.scss */
+.mainArea .sortable li {
+  margin: 3px;
+  padding: 1px;
+  float: left;
+  width: 100px;
+  height: 90px;
+  font-size: 1em;
+  text-align: center;
+}
+/* line 38, ../sass/style.scss */
+.mainArea .sortable li .todoTitle {
+  display: block;
+}
+/* line 42, ../sass/style.scss */
+.mainArea .sortable li .todoDescription {
+  font-size: 0.8em;
+  display: block;
+}
+
+/* line 50, ../sass/style.scss */
+.row {
+  margin-left: 0;
+}

@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>TODO - Backbone application </title>
+		<link href="styles/stylesheets/jquery-ui-1.10.2.custom.min.css" rel="stylesheet" media="screen">
+		<link href="styles/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="styles/stylesheets/style.css" rel="stylesheet" media="screen">
+	</head>
+	<body>
+	<div class="mainArea">
+		<!-- Todo view -->
+		<div  class='row' id="todo">
+		</div>
+		<div id="modal" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">			
+		</div>
+	</div>
+	<script id="modal-template" type="text/x-handlebars-template">
+  			<div class="modal-header">
+    			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+    			<h3 id="myModalLabel">Add new TODO item</h3>
+  			</div>
+  			<div class="modal-body">
+    			<form class="form-horizontal">
+    				<div class="control-group">
+				    <label class="control-label" for="inputTitle">Title</label>
+				    <div class="controls">
+				      <input type="text" id="inputTitle" placeholder="Title">
+				    </div>
+				  	</div>
+				   <div class="control-group">
+				    <label class="control-label" for="inputDescription">Description</label>
+				    <div class="controls">
+				      <input type="text" id="inputDescription" placeholder="Description">
+				    </div>
+				  </div>
+    			</form>
+  			</div>
+  			<div class="modal-footer">
+    		<button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+    		<button class="btn btn-primary" id="createNewTodo">Save</button>
+  		</div>
+	</script>
+    	<!-- Main template -->
+    	<script id="main-template" type="text/x-handlebars-template">
+    		<div class="row">
+    		    <h4 class='text-center'>Backbone TODO application</h4>    					
+    			<button class="btn btn-primary pull-left addBtn" id="showDialog">Add TODO</button>    			
+    		</div>
+    		
+    		<div class="span6" id="statusTodo">
+			<h4 class='text-center'>TODO</h4>
+			<div class="row">
+				<ul class="sortable connected inTodo" data-status='todo'>			  
+				</ul>
+			</div>	
+			</div>
+			<div class="span6" id="statusInProgress">
+				<div class="row">
+					<h4 class='text-center'>In Progress</h4>
+					<ul class="sortable connected inProgress" data-status='inProgres'>			  
+					</ul>
+				</div>
+			</div>
+			<div class="span6" id="statusDone">
+				<div class="row">
+					<h4 class='text-center'>Done</h4>
+					<ul class="sortable connected inDone" data-status="done">
+						
+					</ul>
+				</div>		
+			</div>							
+		</script>		
+		<!-- -->
+		<!-- Item template -->
+		<script id="item-template" type="text/x-handlebars-template">
+  			<span class="todoTitle">{{title}}</span>
+  			<span class='todoDescription'>{{description}}</span>
+  			<span class="createdAt">{{createdAt}}</span>		
+		</script>
+		<!-- -->
+		<script src="vendors/jquery/jquery-1.9.1.js"></script>
+		<script src="vendors/jquery/jquery-ui-1.10.2.custom.min.js"></script>
+		<script src="vendors/underscore/underscore.js"></script>
+		<script src="vendors/handlebars/handlebars.js"></script>
+		<script src="vendors/bootstrap/bootstrap.min.js"></script>
+		<script src="vendors/backbone/backbone.js"></script>
+		<script src="vendors/backbone.localStorage/backbone.localStorage.js"></script>
+		<script src="app/models/todo.js"></script>
+		<script src="app/collections/todos.js"></script>
+		<script src="app/views/todos.js"></script>
+		<script src="app/views/app.js"></script>
+		<script src="app/views/modal.js"></script>
+		<script src="app/routers/router.js"></script>
+		<script src="app/app.js"></script>
+  </script>
+		</body>
+</html>
+		
+	

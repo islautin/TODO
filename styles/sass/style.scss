@@ -1,0 +1,54 @@
+@import "compass/css3";
+
+body {
+  background-color: #f4f4f4;
+}
+.mainArea {
+  margin: 0 auto;
+  width: 1600px;
+  
+  .sortable {
+    min-height: 800px;
+  }
+  
+  .addBtn {
+    margin-left: 20px;
+  }  
+
+  .sortable { 
+      list-style-type: none; 
+      margin: 0;
+      padding: 0; 
+      width: 100%;
+      border: 1px solid grey;
+      @include single-box-shadow;;
+               
+      }
+      
+      
+      
+     .sortable li { 
+       margin: 3px; 
+       padding: 1px; 
+       float: left; 
+       width: 100px; 
+       height: 90px; 
+       font-size: 1em; 
+       text-align: center;
+          .todoTitle {
+            display: block;              
+          }
+          
+          .todoDescription {
+              font-size: 0.8em;
+              display: block;            
+          }
+          
+      }
+  }
+  
+  .row {
+    margin-left: 0;
+  }  
+  
+  
