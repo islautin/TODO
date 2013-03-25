@@ -17,6 +17,7 @@ $(function ($) {
 			this.listenTo(app.Todos, 'add', this.renderNewTodo);
 			this.listenTo(app.Todos, 'reset', this.renderAll);
 			app.Todos.fetch();
+			Backbone.Mediator.subscribe('view:modal:save', this.addNewTodo)
 		},
 		
 		changeStatus: function (event, ui) {
@@ -28,18 +29,19 @@ $(function ($) {
 		},
 
 		render: function () {
-			
 			this.$el.html(this.template());
 			$( ".sortable" ).sortable({
 				connectWith: '.connected'
-			}).disableSelection();    		
-    		
+			}).disableSelection();
     		return this;	
 		},
 		
 		renderAll: function () {
-			app.Todos.each(this.renderNewTodo, this);		
-			
+			app.Todos.each(this.renderNewTodo, this);
+		},
+
+		addNewTodo: function (todo) {
+			app.Todos.create(todo);			
 		},
 		
 		
@@ -53,7 +55,6 @@ $(function ($) {
 		showDialog: function () {
 			var modalView = new app.ModalView();			
 			$("#modal").modal("show");
-					
 		}		
 	});
 });

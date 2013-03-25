@@ -1,6 +1,6 @@
 /* line 3, ../sass/style.scss */
 body {
-  background-color: #f4f4f4;
+  background-image: url(images/retina_wood.png);
 }
 
 /* line 6, ../sass/style.scss */
@@ -23,11 +23,25 @@ body {
   padding: 0;
   width: 100%;
   border: 1px solid grey;
+  border-radius: 20px;
+  background-image: url(images/cork.jpg);
   -webkit-box-shadow: 0px 0px 5px #333333;
   -moz-box-shadow: 0px 0px 5px #333333;
   box-shadow: 0px 0px 5px #333333;
 }
 /* line 30, ../sass/style.scss */
+.mainArea .inTodo {
+  border-radius: 20px 0px 0px 20px;
+}
+/* line 33, ../sass/style.scss */
+.mainArea .inDone {
+  border-radius: 0px 20px 20px 0px;
+}
+/* line 36, ../sass/style.scss */
+.mainArea .inProgress {
+  border-radius: 0px;
+}
+/* line 39, ../sass/style.scss */
 .mainArea .sortable li {
   margin: 3px;
   padding: 1px;
@@ -36,18 +50,23 @@ body {
   height: 90px;
   font-size: 1em;
   text-align: center;
+  border: 2px solid grey;
+  border-radius: 20px;
+  background-color: white;
+  opacity: 0.8;
+  color: black;
 }
-/* line 38, ../sass/style.scss */
+/* line 52, ../sass/style.scss */
 .mainArea .sortable li .todoTitle {
   display: block;
 }
-/* line 42, ../sass/style.scss */
+/* line 56, ../sass/style.scss */
 .mainArea .sortable li .todoDescription {
   font-size: 0.8em;
   display: block;
 }
 
-/* line 50, ../sass/style.scss */
+/* line 64, ../sass/style.scss */
 .row {
   margin-left: 0;
 }

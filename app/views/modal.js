@@ -15,9 +15,7 @@ $(function () {
 
 		
 		initialize: function () {
-			$('#modal').on('hide', function () {
- 				this.undelegateEvents();	 
-			}.bind(this));
+			$('#modal').on('hide', this.cleanUp.bind(this));
 			this.render();			
 			return this;	
 		},
@@ -26,14 +24,22 @@ $(function () {
 			this.$el.html(this.template());			
 			return this;
 		},
+
+		cleanUp: function () {
+			this.undelegateEvents();
+			$("#modal").off('hide', this.cleanUp);
+		},
 		
 		createNewTodo: function () {
-			var data = {}
-			data.title = this.$el.find("#inputTitle").val();
-			data.description = this.$el.find("#inputDescription").val();
-			app.Todos.create(data);
+			Backbone.Mediator.publish('view:modal:save', this.getData());
 			$("#modal").modal('hide');
-			this.undelegateEvents();
+		},
+
+		getData: function () {
+			return {
+				title: this.$el.find("#inputTitle").val().trim(),
+				description: this.$el.find("#inputDescription").val().trim()
+			}
 		}		
 	});
 });

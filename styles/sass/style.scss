@@ -1,7 +1,7 @@
 @import "compass/css3";
 
 body {
-  background-color: #f4f4f4;
+  background-image: url(images/retina_wood.png);
 }
 .mainArea {
   margin: 0 auto;
@@ -21,12 +21,21 @@ body {
       padding: 0; 
       width: 100%;
       border: 1px solid grey;
+	    border-radius: 20px;
+      background-image: url(images/cork.jpg);
       @include single-box-shadow;;
                
       }
       
-      
-      
+      .inTodo {
+        border-radius: 20px 0px 0px 20px;    
+      } 
+      .inDone  {
+       border-radius: 0px 20px 20px 0px;  
+      }
+      .inProgress{
+        border-radius: 0px; 
+      } 
      .sortable li { 
        margin: 3px; 
        padding: 1px; 
@@ -35,6 +44,11 @@ body {
        height: 90px; 
        font-size: 1em; 
        text-align: center;
+        border: 2px solid grey;
+        border-radius: 20px;
+        background-color: white;
+        opacity: 0.8;
+        color: black;
           .todoTitle {
             display: block;              
           }
