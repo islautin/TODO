@@ -3,8 +3,10 @@
 	<head>
 		<meta charset="utf-8">
 		<title>TODO - Backbone application </title>
+		<link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
 		<link href="styles/stylesheets/jquery-ui-1.10.2.custom.min.css" rel="stylesheet" media="screen">
 		<link href="styles/stylesheets/bootstrap.min.css" rel="stylesheet" media="screen">
+		<link href="styles/stylesheets/font-awesome.min.css" rel="stylesheet" media="screen">
 		<link href="styles/stylesheets/style.css" rel="stylesheet" media="screen">
 	</head>
 	<body>
@@ -74,9 +76,11 @@
 		<!-- -->
 		<!-- Item template -->
 		<script id="item-template" type="text/x-handlebars-template">
+  			<i class="icon-pushpin customPin"></i>
   			<span class="todoTitle">{{title}}</span>
   			<span class='todoDescription'>{{description}}</span>
-  			<span class="createdAt">{{createdAt}}</span>		
+  			<span class="createdAt">{{createdAt}}</span>
+  			<i class='icon-pencil customPen'></i>		
 		</script>
 		<!-- -->
 		<script src="vendors/jquery/jquery-1.9.1.js"></script>

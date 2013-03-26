@@ -8,7 +8,10 @@ $(function ($) {
 		template: Handlebars.compile($('#main-template').html()),
 		events: {
 			'click #showDialog': 'showDialog',
-			'sortreceive .sortable': 'changeStatus'			
+			'sortreceive .sortable': 'changeStatus',
+			'sortactivate .sortable': 'hidePin',
+			'sortstop .sortable': 'showPin'
+
 		},
 		
 
@@ -17,7 +20,16 @@ $(function ($) {
 			this.listenTo(app.Todos, 'add', this.renderNewTodo);
 			this.listenTo(app.Todos, 'reset', this.renderAll);
 			app.Todos.fetch();
-			Backbone.Mediator.subscribe('view:modal:save', this.addNewTodo)
+			Backbone.Mediator.subscribe('view:modal:save', this.addNewTodo);
+			Backbone.Mediator.subscribe('view:todo:edit', this.editTodo);
+		},
+
+		hidePin: function (event, ui) {
+			ui.item.find('.customPin').hide(200);
+		},
+
+		showPin: function (event, ui) {
+			ui.item.find('.customPin').show(200);
 		},
 		
 		changeStatus: function (event, ui) {
@@ -26,6 +38,7 @@ $(function ($) {
 			var model = app.Todos.get(modelId);
 			model.set('status', newStatus);
 			model.save();
+			ui.item.find('.customPin').show(200);			
 		},
 
 		render: function () {
@@ -51,9 +64,15 @@ $(function ($) {
 			this.$el.find('[data-status=' + status + ']')
 				.prepend(taskView.render().el);	
 		},
+
+		editTodo: function (modelId) {
+			var todo = app.Todos.get(modelId);
+			new app.ModalView({model: todo});
+
+		},
 		
 		showDialog: function () {
-			var modalView = new app.ModalView();			
+			new app.ModalView();			
 			$("#modal").modal("show");
 		}		
 	});

@@ -50,23 +50,48 @@ body {
   height: 90px;
   font-size: 1em;
   text-align: center;
+  position: relative;
   border: 2px solid grey;
-  border-radius: 20px;
+  border-radius: 10px;
   background-color: white;
-  opacity: 0.8;
   color: black;
 }
-/* line 52, ../sass/style.scss */
+/* line 53, ../sass/style.scss */
 .mainArea .sortable li .todoTitle {
   display: block;
+  border-bottom: 1px solid grey;
+  padding-top: 5px;
+  color: blue;
+  font-family: 'Pacifico', cursive;
 }
-/* line 56, ../sass/style.scss */
+/* line 61, ../sass/style.scss */
 .mainArea .sortable li .todoDescription {
   font-size: 0.8em;
   display: block;
 }
+/* line 66, ../sass/style.scss */
+.mainArea .sortable li .createdAt {
+  font-size: 0.8em;
+}
+/* line 69, ../sass/style.scss */
+.mainArea .sortable li .customPin {
+  font-size: 30px;
+  color: red;
+  position: absolute;
+  right: 36px;
+  top: -20px;
+  -webkit-transform: rotate(-20deg);
+}
+/* line 77, ../sass/style.scss */
+.mainArea .sortable li .customPen {
+  position: absolute;
+  bottom: 8px;
+  right: 0;
+  color: blue;
+  cursor: pointer;
+}
 
-/* line 64, ../sass/style.scss */
+/* line 88, ../sass/style.scss */
 .row {
   margin-left: 0;
 }
